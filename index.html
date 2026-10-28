@@ -41,7 +41,8 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
 @keyframes ifmPop{from{opacity:0;transform:translateY(8px) scale(.94)}to{opacity:1;transform:none}}
 @keyframes ifmFade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes calIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6px,-6px) scale(1.04)}}
+@keyframes todayRing{0%,100%{box-shadow:0 0 0 2px #B39A6B,0 0 0 6px rgba(179,154,107,.14)}50%{box-shadow:0 0 0 2px #B39A6B,0 0 0 9px rgba(179,154,107,0)}}
+@keyframes cellIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
 @keyframes auraC{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(10px,-12px) scale(1.1)}}
 @keyframes wigA{0%,100%{transform:translate(0,0)}25%{transform:translate(1.6px,-1.2px)}50%{transform:translate(-.8px,-2px)}75%{transform:translate(-1.6px,.8px)}}
 @keyframes wigB{0%,100%{transform:translate(0,0)}30%{transform:translate(-1.4px,1.4px)}60%{transform:translate(1.2px,1.8px)}80%{transform:translate(1.8px,-.6px)}}
@@ -56,6 +57,7 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
 @keyframes popIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
 @keyframes ping{0%{transform:scale(.6);opacity:.55}100%{transform:scale(2.4);opacity:0}}
 @keyframes dash{to{stroke-dashoffset:-24}}
+@keyframes fill{from{width:0}}
 @font-face{font-family:"Aspekta";src:url("data:font/woff2;base64,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") format("woff2");font-weight:300;font-display:swap}
 .scr-onboard a{color:#101828}
 .scr-onboard a:hover{color:#364153}
@@ -104,11 +106,16 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
 .scr-calendar .cal,.scr-calendar .cal *{scrollbar-width:none}
 .scr-calendar .cal *::-webkit-scrollbar{display:none;width:0;height:0}
 .scr-calendar .cal button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.scr-calendar .cal button:focus-visible{outline:2px solid #101828;outline-offset:2px}
+.scr-calendar .cal button:focus-visible,.scr-calendar .cal a:focus-visible{outline:2px solid #101828;outline-offset:2px}
+.scr-calendar .scroller>*{flex-shrink:0}
 .scr-calendar .emo{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;line-height:1}
+.scr-calendar .glass{background:rgba(255,255,255,.62);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 12px 32px rgba(61,107,149,.10);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%)}
 .scr-calendar .cal-in{animation:calIn .45s cubic-bezier(.2,.8,.2,1) both}
-.scr-calendar .orb{animation:orbFloat 7s ease-in-out infinite}
-@media (prefers-reduced-motion: reduce){.scr-calendar .orb,.scr-calendar .cal-in{animation:none}}
+.scr-calendar .a1{animation:auraA 10s ease-in-out infinite}
+.scr-calendar .a2{animation:auraB 12s ease-in-out infinite}
+.scr-calendar .today{animation:todayRing 3s ease-in-out infinite}
+.scr-calendar .cell-in{animation:cellIn .4s cubic-bezier(.2,.8,.2,1) both}
+@media (prefers-reduced-motion: reduce){.scr-calendar .a1,.scr-calendar .a2,.scr-calendar .today,.scr-calendar .cal-in,.scr-calendar .cell-in{animation:none !important}}
 .scr-insights a{color:#101828}
 .scr-insights a:hover{color:#364153}
 .scr-insights .ins,.scr-insights .ins *{scrollbar-width:none}
@@ -153,6 +160,23 @@ html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
 .scr-articles .rise{animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
 .scr-articles .pop{animation:pop .3s cubic-bezier(.2,.8,.2,1) both}
 @media (prefers-reduced-motion: reduce){.scr-articles .a1,.scr-articles .a2,.scr-articles .rise,.scr-articles .pop{animation:none !important}}
+.scr-about a{color:#101828}
+.scr-about a:hover{color:#364153}
+.scr-about .ab,.scr-about .ab *{scrollbar-width:none}
+.scr-about .ab *::-webkit-scrollbar{display:none;width:0;height:0}
+.scr-about .ab button{font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.scr-about .ab button:focus-visible,.scr-about .ab a:focus-visible{outline:2px solid #101828;outline-offset:2px}
+.scr-about .scroller>*{flex-shrink:0}
+.scr-about .emo{font-family:'Apple Color Emoji','Segoe UI Emoji','Noto Color Emoji',sans-serif;line-height:1}
+.scr-about .card{border-radius:26px;padding:20px 18px;background:rgba(255,255,255,.72);box-shadow:inset 0 0 0 1px rgba(255,255,255,.95),0 12px 30px rgba(61,107,149,.10);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);display:flex;flex-direction:column;gap:12px}
+.scr-about .inner{border-radius:18px;padding:14px;background:rgba(237,244,250,.8);display:flex;flex-direction:column;gap:8px}
+.scr-about .ttl{margin:0;font-size:19px;font-weight:700;letter-spacing:-0.01em;color:#101828}
+.scr-about .p{margin:0;font-size:15px;line-height:1.55;color:#364153}
+.scr-about .li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45;color:#364153}
+.scr-about .li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:#8DB4D6;margin-top:8px}
+.scr-about .rise{animation:rise .5s cubic-bezier(.2,.8,.2,1) both}
+.scr-about .a1{animation:auraA 10s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.scr-about .rise,.scr-about .a1{animation:none !important}}
 </style>
 </head>
 <body>
@@ -1063,31 +1087,27 @@ SCREENS.calendar = (function (DCLogic) {
 
 var CAL_TODAY = 4;
 var CAL_ILL = { start: 1, end: 7, name: "Common Cold", expected: 7 };
-// [time, type, emoji, title, detail, minutes, done]
+// [time, type, emoji, title, detail, hour (24h), done]
 var CAL_DAYS = {
-  1: [ ["8:10 AM","s","🗣️","Sore Throat","Severity 3/10"], ["8:12 AM","e","🤧","Common Cold","Illness started"] ],
-  2: [ ["9:00 AM","m","💊","Acetaminophen","500mg",0,true], ["1:40 PM","s","🤧","Congestion","Severity 5/10"], ["7:05 PM","s","😷","Cough","Severity 4/10"] ],
-  3: [ ["8:00 AM","m","💊","Amoxicillin","500mg",0,true], ["2:30 PM","a","🩺","Dr. Sarah Johnson","2:30 – 3:15 PM · Follow-up",45,true], ["4:12 PM","s","🤕","Headache","Severity 5/10"], ["9:30 PM","s","🤒","Fever","Severity 6/10"] ],
-  4: [ ["8:00 AM","m","💊","Amoxicillin","500mg",0,true], ["11:20 AM","s","😫","Fatigue","Severity 7/10"], ["2:00 PM","m","💊","Ibuprofen","200mg · due",0,false], ["3:45 PM","s","🤕","Headache","Severity 6/10"] ],
-  5: [ ["8:00 AM","m","💊","Amoxicillin","500mg",0,true], ["6:15 PM","s","😷","Cough","Severity 5/10"] ],
-  6: [ ["8:00 AM","m","💊","Amoxicillin","500mg",0,true], ["9:00 AM","a","🧪","Lab Work","9:00 – 9:30 AM · Blood test",30,true], ["8:40 PM","s","🤧","Congestion","Severity 4/10"] ],
-  7: [ ["8:00 AM","m","💊","Amoxicillin","500mg · last dose",0,true], ["5:00 PM","s","😫","Fatigue","Severity 2/10"] ],
-  8: [ ["9:00 AM","m","☀️","Vitamin D","1000 IU",0,true] ],
-  10: [ ["10:30 AM","s","🤕","Headache","Severity 2/10"] ],
-  15: [ ["9:00 AM","a","🧪","Lab Work","9:00 – 9:30 AM · Results review",30,false] ],
-  18: [ ["9:00 AM","m","☀️","Vitamin D","1000 IU",0,false] ],
-  22: [ ["6:20 PM","s","😓","Stress","Severity 3/10"] ],
-  28: [ ["11:15 AM","a","🩺","Dr. Michael Chen","11:15 AM – 12:00 PM · Specialist",45,false] ]
+  1: [ ["8:10 AM","s","🗣️","Sore Throat","Severity 3/10",8], ["8:12 AM","e","📋","Common Cold","Illness started",8] ],
+  2: [ ["9:00 AM","m","💊","Acetaminophen","500mg",9,true], ["1:40 PM","s","🤧","Congestion","Severity 5/10",13], ["7:05 PM","s","😷","Cough","Severity 4/10",19] ],
+  3: [ ["8:00 AM","m","💊","Amoxicillin","500mg",8,true], ["2:30 PM","a","🩺","Dr. Sarah Johnson","Follow-up · City Medical Center",14,true], ["4:12 PM","s","🤕","Headache","Severity 5/10",16], ["9:30 PM","s","🤒","Fever","Severity 6/10",21] ],
+  4: [ ["8:00 AM","m","💊","Amoxicillin","500mg",8,true], ["11:20 AM","s","😫","Fatigue","Severity 7/10",11], ["2:00 PM","m","💊","Ibuprofen","200mg · due",14,false], ["3:45 PM","s","🤕","Headache","Severity 6/10",15] ],
+  5: [ ["8:00 AM","m","💊","Amoxicillin","500mg",8,true], ["6:15 PM","s","😷","Cough","Severity 5/10",18] ],
+  6: [ ["8:00 AM","m","💊","Amoxicillin","500mg",8,true], ["9:00 AM","a","🧪","Lab Work","Blood test",9,true], ["8:40 PM","s","🤧","Congestion","Severity 4/10",20] ],
+  7: [ ["8:00 AM","m","💊","Amoxicillin","500mg · last dose",8,true], ["5:00 PM","s","😫","Fatigue","Severity 2/10",17] ],
+  8: [ ["9:00 AM","m","☀️","Vitamin D","1000 IU",9,true] ],
+  10: [ ["10:30 AM","s","🤕","Headache","Severity 2/10",10] ],
+  15: [ ["9:00 AM","a","🧪","Lab Work","Results review",9,false] ],
+  18: [ ["9:00 AM","m","☀️","Vitamin D","1000 IU",9,false] ],
+  22: [ ["6:20 PM","s","😓","Stress","Severity 3/10",18] ],
+  28: [ ["11:15 AM","a","🩺","Dr. Michael Chen","Specialist consultation",11,false] ]
 };
 var CAL_DOW = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-var CAL_SHORT = ["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+var CAL_SHORT = ["MON","TUE","WED","THU","FRI","SAT","SUN"];
 var CAL_FIRST = 4; // May 1, 2026 is a Friday (Monday-first index)
-var CAL_TYPE = {
-  s: { bg: "#DCEAF6", ring: "#8DB4D6" },
-  m: { bg: "#F1EADB", ring: "#B39A6B" },
-  a: { bg: "#3D6B95", ring: "#3D6B95" },
-  e: { bg: "#F7F2E8", ring: "#CDB88E" }
-};
+var NODE = { s: "background: linear-gradient(140deg, #F3F8FC, #DCEAF6)", m: "background: linear-gradient(140deg, #FBF8F1, #EFE6D3)", a: "background: linear-gradient(140deg, #5C8BB5, #3D6B95)", e: "background: linear-gradient(140deg, #FFFFFF, #F1EADB)" };
+var TYPE_WORD = { s: "Symptom", m: "Medication", a: "Appointment", e: "Event" };
 function calDow(d) { return (CAL_FIRST + d - 1) % 7; }
 
 class Component extends DCLogic {
@@ -1101,21 +1121,18 @@ class Component extends DCLogic {
       var d = i - CAL_FIRST + 1, real = d >= 1 && d <= 31;
       var items = real ? (CAL_DAYS[d] || []) : [];
       var on = real && d === sel, isToday = real && d === CAL_TODAY;
-      var col = i % 7, ill = real && d >= CAL_ILL.start && d <= CAL_ILL.end;
-      var ribbon = "display: none";
-      if (ill) {
-        var l = d === CAL_ILL.start || col === 0, r = d === CAL_ILL.end || col === 6;
-        ribbon = "left: " + (l ? "1px" : "0") + "; right: " + (r ? "1px" : "0") + "; border-radius: " + (l ? "21px" : "0") + " " + (r ? "21px" : "0") + " " + (r ? "21px" : "0") + " " + (l ? "21px" : "0") + "; background: #F0EADD";
-      }
-      var nItems = items.length;
-      var shade = nItems >= 4 ? "#B7D0E8" : nItems === 3 ? "#C9DCEE" : nItems === 2 ? "#DAE7F3" : nItems === 1 ? "#E8F0F8" : (ill ? "transparent" : "#F4F6F9");
-      var circle = on ? "background: #B39A6B; box-shadow: 0 6px 14px rgba(179,154,107,.35)" : "background: " + shade + (isToday ? "; box-shadow: inset 0 0 0 1.5px #B39A6B" : (nItems === 0 && ill ? "; box-shadow: inset 0 0 0 1px #DED0B4" : ""));
-      var dot = nItems ? "background: " + (on ? "#FFFFFF" : "#3D6B95") : "display: none";
-      var dots = [];
+      var ill = real && d >= CAL_ILL.start && d <= CAL_ILL.end;
+      var style;
+      if (on) style = "background: linear-gradient(160deg, #2B3B52, #101828); box-shadow: 0 10px 20px rgba(16,24,40,.22); transform: translateY(-2px)";
+      else if (ill) style = "background: linear-gradient(150deg, #F5EFE3 0%, #E4EEF7 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.9)";
+      else if (items.length) style = "background: rgba(255,255,255,.95); box-shadow: inset 0 0 0 1px rgba(16,24,40,.06), 0 3px 8px rgba(61,107,149,.08)";
+      else style = "background: rgba(255,255,255,.35); box-shadow: inset 0 0 0 1px rgba(16,24,40,.05)";
       cells.push({
-        real: real, n: real ? d : "", on: on, ribbon: ribbon, dots: dots, circle: circle, dot: dot,
-        weight: on ? 700 : (items.length || isToday ? 600 : 500),
+        real: real, n: real ? d : "", on: on, cls: (isToday && !on ? "today " : "") + "cell-in",
+        delay: (i * 0.012).toFixed(3), style: style,
+        weight: on || isToday ? 700 : (items.length ? 600 : 500),
         ink: on ? "#FFFFFF" : (isToday ? "#7A6440" : (items.length ? "#101828" : "#8A93A3")),
+        dot: items.length ? "background: " + (on ? "#DCC9A3" : "#3D6B95") : "background: transparent",
         label: "May " + d + (isToday ? ", today" : "") + (items.length ? ", " + items.length + " logged" : ", nothing logged"),
         pick: real ? pick(d) : null
       });
@@ -1123,60 +1140,66 @@ class Component extends DCLogic {
 
     var stripe = [];
     for (var sd = 1; sd <= 31; sd++) {
-      var n = (CAL_DAYS[sd] || []).length;
-      stripe.push({ style: "height: " + (n ? 8 + n * 5 : 3) + "px; background: " + (sd === CAL_TODAY ? "#B39A6B" : (n ? "#B9D3EA" : "rgba(16,24,40,.08)")) + (sd === sel ? "; box-shadow: 0 0 0 1.5px #3E343E" : "") });
+      var cnt = (CAL_DAYS[sd] || []).length;
+      stripe.push({ style: "height: " + (cnt ? 8 + cnt * 4.5 : 3) + "px; background: " + (sd === sel ? "#101828" : (sd === CAL_TODAY ? "#B39A6B" : (cnt ? "#B9D3EA" : "rgba(16,24,40,.08)"))) });
     }
 
-    var wkStart = Math.max(1, sel - calDow(sel));
-    if (sel <= 3) wkStart = 1;
     var monday = sel - calDow(sel);
     var week = [];
     for (var w = 0; w < 7; w++) {
       var wd = monday + w, valid = wd >= 1 && wd <= 31;
       var wit = valid ? (CAL_DAYS[wd] || []) : [];
-      var won = wd === sel, wtoday = wd === CAL_TODAY;
-      var emos = wit.slice(0, 3).map(function (x) { return { e: x[2], style: "background: " + CAL_TYPE[x[1]].bg }; });
-      if (wit.length > 3) emos.push({ e: "+" + (wit.length - 3), style: "background: #FFFFFF; font-family: inherit; font-size: 8px; font-weight: 700; color: #4A5565" });
-      if (emos.length) emos[0].style += "; margin-left: 0";
+      var won = wd === sel, wtoday = wd === CAL_TODAY, wIll = valid && wd >= CAL_ILL.start && wd <= CAL_ILL.end;
+      var ws = won ? "background: linear-gradient(160deg, #2B3B52, #101828); box-shadow: 0 10px 20px rgba(16,24,40,.22); transform: translateY(-2px)"
+        : (wIll ? "background: linear-gradient(150deg, #F5EFE3 0%, #E4EEF7 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.9)"
+        : (valid ? "background: rgba(255,255,255,.9); box-shadow: inset 0 0 0 1px rgba(16,24,40,.06)" : "background: rgba(255,255,255,.3)"));
       week.push({
-        d: CAL_SHORT[w], n: valid ? wd : (wd < 1 ? 30 + wd : wd - 31), on: won, label: CAL_DOW[w] + (valid ? " May " + wd : ""),
-        numStyle: won ? "background: #B39A6B; color: #FFFFFF; box-shadow: 0 6px 14px rgba(179,154,107,.35)" : (wtoday ? "color: #7A6440; box-shadow: inset 0 0 0 1.5px #B39A6B" : (valid ? "color: #101828" : "color: #C3C8D0")),
-        emos: emos, dot: wit.length ? "background: " + (won || wtoday ? "#B39A6B" : "#8DB4D6") : "background: transparent",
+        d: CAL_SHORT[w], n: valid ? wd : (wd < 1 ? 30 + wd : wd - 31), on: won, cls: wtoday && !won ? "today" : "",
+        label: CAL_DOW[w] + (valid ? " May " + wd : ""), style: ws,
+        ink: won ? "#FFFFFF" : (wtoday ? "#7A6440" : (valid ? "#101828" : "#C3C8D0")),
+        dowInk: won ? "rgba(255,255,255,.75)" : "#6A7282",
+        dot: wit.length ? "background: " + (won ? "#DCC9A3" : "#3D6B95") : "background: transparent",
         pick: valid ? pick(wd) : null
       });
     }
 
     var progress = [];
     for (var pd = CAL_ILL.start; pd <= CAL_ILL.end; pd++) {
-      progress.push({ style: pd === CAL_TODAY ? "background: #B39A6B; box-shadow: 0 0 0 3px rgba(179,154,107,.25)" : (pd < CAL_TODAY ? "background: #8DB4D6" : "border: 1.5px dashed #B9C3CF") });
+      progress.push({ style: pd === CAL_TODAY ? "background: #B39A6B" : (pd < CAL_TODAY ? "background: #8DB4D6" : "background: rgba(16,24,40,.08)") });
     }
 
-    var items2 = (CAL_DAYS[sel] || []).map(function (x) {
-      var ty = CAL_TYPE[x[1]], mins = x[5] || 0;
-      var h = mins >= 30 ? 68 : 44;
-      var meta = x[1] === "s" ? x[0] + " · " + x[4] : (x[1] === "a" ? x[4] : x[0] + " · " + x[4]);
-      var hasCheck = x[1] === "m" || x[1] === "a";
-      return {
-        time: x[0].replace(" AM", "").replace(" PM", ""), emoji: x[2], title: x[3], meta: meta,
-        node: "height: " + h + "px; background: " + ty.bg + (x[1] === "a" ? "; filter: none" : ""),
-        done: hasCheck && !!x[6],
-        check: hasCheck ? (x[6] ? "background: " + ty.ring : "box-shadow: inset 0 0 0 2px " + ty.ring) : "display: none"
-      };
+    var GROUPS = [{ name: "Morning", icon: "🌅", from: 0, to: 12 }, { name: "Afternoon", icon: "☀️", from: 12, to: 17 }, { name: "Evening", icon: "🌙", from: 17, to: 24 }];
+    var dayItems = CAL_DAYS[sel] || [];
+    var groups = [];
+    GROUPS.forEach(function (g) {
+      var its = dayItems.filter(function (x) { return x[5] >= g.from && x[5] < g.to; }).map(function (x) {
+        var check = x[1] === "m" || x[1] === "a";
+        return {
+          time: x[0], emoji: x[2], title: x[3], meta: TYPE_WORD[x[1]] + " · " + x[4], node: NODE[x[1]],
+          hasCheck: check, done: check && !!x[6],
+          check: check ? (x[6] ? "background: " + (x[1] === "a" ? "#3D6B95" : "#B39A6B") : "box-shadow: inset 0 0 0 2px " + (x[1] === "a" ? "#8DB4D6" : "#CDB88E")) : ""
+        };
+      });
+      if (its.length) groups.push({ name: g.name, icon: g.icon, items: its });
     });
     var illDay = sel >= CAL_ILL.start && sel <= CAL_ILL.end;
+    function shiftWeek(n) { return function () { var s2 = Math.min(31, Math.max(1, sel + n)); self.setState({ sel: s2 }); }; }
 
     return {
+      monthName: "May",
       progress: progress,
       isMonth: st.view === "month", isWeek: st.view === "week",
-      thumbX: st.view === "week" ? "0%" : "100%",
-      weekInk: st.view === "week" ? "#101828" : "#6A7282", monthInk: st.view === "month" ? "#101828" : "#6A7282",
+      thumbX: st.view === "week" ? "0px" : "62px",
+      weekInk: st.view === "week" ? "#FFFFFF" : "#4A5565", monthInk: st.view === "month" ? "#FFFFFF" : "#4A5565",
       showWeek: function () { self.setState({ view: "week" }); },
       showMonth: function () { self.setState({ view: "month" }); },
       cells: cells, stripe: stripe, week: week,
-      weekTitle: "Week of " + Math.max(1, monday),
-      dayTitle: CAL_DOW[calDow(sel)] + ", May " + sel + (sel === CAL_TODAY ? " · Today" : ""),
-      dayIll: illDay, dayIllLabel: CAL_ILL.name + " · Day " + (sel - CAL_ILL.start + 1),
-      hasItems: items2.length > 0, noItems: items2.length === 0, items: items2
+      weekTitle: "Week of May " + Math.max(1, monday),
+      prevWeek: shiftWeek(-7), nextWeek: shiftWeek(7),
+      dayKicker: sel === CAL_TODAY ? "Today" : (sel < CAL_TODAY ? "Logged" : "Coming up"),
+      dayTitle: CAL_DOW[calDow(sel)] + ", May " + sel,
+      dayIll: illDay, dayIllLabel: "🤧 Day " + (sel - CAL_ILL.start + 1),
+      hasItems: groups.length > 0, noItems: groups.length === 0, groups: groups
     };
   }
 }
@@ -1517,7 +1540,23 @@ class Component extends DCLogic {
 return Component;
 })(SubBase);
 
-var ORDER = ["onboard", "home", "log", "calendar", "insights", "care", "articles"];
+SCREENS.about = (function (DCLogic) {
+
+var CHIPS = [["😫", "Fatigue", 6], ["🤕", "Headache", 5], ["🤒", "Fever", 4], ["😷", "Cough", 3], ["🤧", "Congestion", 2], ["🗣️", "Sore Throat", 1]];
+var EXPECTED = [["Runny or stuffy nose", true], ["Sore throat", true], ["Cough", true], ["Sneezing", false], ["Body aches", false], ["Mild headache", true], ["Low-grade fever", true]];
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      chips: CHIPS.map(function (c) { return { e: c[0], t: c[1], n: c[2] }; }),
+      expected: EXPECTED.map(function (x) { return { t: x[0], logged: x[1] }; })
+    };
+  }
+}
+
+return Component;
+})(SubBase);
+
+var ORDER = ["onboard", "home", "log", "calendar", "insights", "care", "articles", "about"];
 function hostInit(self) {
   __host = self;
   self.subs = {};
@@ -1856,7 +1895,7 @@ T.home = (V) => html`<div class="scr-home scr-enter" style="position: absolute; 
 ${(V.home.readOpen) ? html`
 <p class="rise" style="position: relative; margin: 12px 0 0; font-size: 14px; line-height: 1.5; color: #4A5565">A common viral infection of the nose and throat. Rest, fluids and over-the-counter relief usually help while it runs its course. Contact a doctor if a fever lasts more than 3 days or breathing gets hard.</p>
 ` : nothing}
-<button type="button" aria-expanded="${V.home.readOpen}" @click=${V.home.toggleRead} style="position: relative; align-self: flex-start; margin-top: 14px; height: 25px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(244,249,255,.8); background: linear-gradient(163deg, rgba(168,220,255,.3) 0%, rgba(119,160,175,.3) 100%); color: #6F6052; font-size: 12px">${V.home.readLabel}</button>
+<button type="button" aria-expanded="${V.home.readOpen}" @click=${V.__nav.about} style="position: relative; align-self: flex-start; margin-top: 14px; height: 25px; padding: 0 12px; border-radius: 999px; border: 1px solid rgba(244,249,255,.8); background: linear-gradient(163deg, rgba(168,220,255,.3) 0%, rgba(119,160,175,.3) 100%); color: #6F6052; font-size: 12px">${V.home.readLabel}</button>
 </div>
 
 <div style="display: flex; flex-direction: column; gap: 14px">
@@ -2273,114 +2312,126 @@ ${(V.log.onDone) ? html`
 </div>
 
 </div></div>`;
-T.calendar = (V) => html`<div class="scr-calendar scr-enter" style="position: absolute; inset: 0"><div class="cal" style="width: 394px; height: 852px; position: relative; overflow: hidden; border-radius: 40px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; color: #101828; -webkit-font-smoothing: antialiased; background: radial-gradient(120% 60% at 12% 0%, #CFE3F3 0%, rgba(207,227,243,0) 55%), radial-gradient(70% 40% at 100% 22%, #EFE6D3 0%, rgba(239,230,211,0) 60%), radial-gradient(90% 50% at 40% 78%, #E2EDF8 0%, rgba(226,237,248,0) 70%), #F7F9FB">
+T.calendar = (V) => html`<div class="scr-calendar scr-enter" style="position: absolute; inset: 0"><div class="cal" style="width: 394px; height: 852px; position: relative; overflow: hidden; border-radius: 40px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; color: #101828; -webkit-font-smoothing: antialiased; background: linear-gradient(165deg, #E6EFF8 0%, #F4F7FA 38%, #F7F4EE 100%)">
 
-<div style="position: absolute; inset: 0; overflow-y: auto; padding: 56px 20px 130px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
-
-<div style="display: flex; flex-direction: column; gap: 2px">
-<span style="font-size: 14px; color: #6A7282">Hi ${V.__user.first},</span>
-<h1 style="margin: 0; font-size: 30px; line-height: 1.1; font-weight: 700; letter-spacing: -0.02em">Your health,<br>day by day</h1>
-</div>
-
-<div style="position: relative; overflow: hidden; border-radius: 22px; padding: 16px 18px; background: linear-gradient(120deg, rgba(255,255,255,.85) 0%, rgba(255,255,255,.55) 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.9), 0 10px 30px rgba(61,107,149,.10); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); display: flex; align-items: center; justify-content: space-between; gap: 12px">
-<span aria-hidden="true" class="orb" style="position: absolute; right: -30px; top: -40px; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle at 40% 40%, #EADFC8 0%, rgba(234,223,200,.4) 45%, rgba(207,227,243,0) 70%)"></span>
-<div style="position: relative; display: flex; align-items: center; gap: 12px">
-<span class="emo" aria-hidden="true" style="width: 42px; height: 42px; border-radius: 50%; background: #FFFFFF; display: grid; place-items: center; font-size: 22px; box-shadow: 0 4px 12px rgba(16,24,40,.08)">🤧</span>
-<div style="display: flex; flex-direction: column; gap: 3px">
-<span style="font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #7A6440">Current illness</span>
-<span style="font-size: 17px; font-weight: 700">Common Cold · Day 4</span>
-</div>
-</div>
-<div style="position: relative; display: flex; gap: 4px; align-items: center" aria-label="Logged on days 1 to 4 of 7 expected" role="img">
-${((V.calendar.progress) || []).map((L_pg) => html`
-<span style="display: block; width: 9px; height: 9px; border-radius: 50%; box-sizing: border-box; ${L_pg.style}"></span>
-`)}
-</div>
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none">
+<span class="a1" style="position: absolute; right: -120px; top: -90px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, #C7DCF0 0%, rgba(199,220,240,.5) 40%, rgba(199,220,240,0) 70%)"></span>
+<span class="a2" style="position: absolute; left: -140px; top: 300px; width: 380px; height: 380px; border-radius: 50%; background: radial-gradient(circle, #EFE6D3 0%, rgba(239,230,211,.55) 42%, rgba(239,230,211,0) 70%)"></span>
+<svg width="394" height="300" viewBox="0 0 394 300" style="position: absolute; left: 0; top: 0; opacity: .5"><path d="M-20 210 C 80 150, 180 250, 420 120" fill="none" stroke="#FFFFFF" stroke-width="1.5"></path><path d="M-20 240 C 100 180, 200 280, 420 150" fill="none" stroke="#FFFFFF" stroke-width="1"></path></svg>
 </div>
 
-<div role="tablist" aria-label="Calendar view" style="position: relative; display: flex; padding: 4px; border-radius: 999px; background: rgba(255,255,255,.55); box-shadow: inset 0 0 0 1px rgba(255,255,255,.8); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px)">
-<span aria-hidden="true" style="position: absolute; top: 4px; left: 4px; width: calc(50% - 4px); height: calc(100% - 8px); border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 12px rgba(16,24,40,.08); transform: translateX(${V.calendar.thumbX}); transition: transform .4s cubic-bezier(.2,.85,.25,1)"></span>
-<button type="button" role="tab" aria-selected="${V.calendar.isWeek}" @click=${V.calendar.showWeek} style="position: relative; flex: 1; height: 38px; border: 0; background: transparent; font-size: 14px; font-weight: 600; color: ${V.calendar.weekInk}">Week</button>
-<button type="button" role="tab" aria-selected="${V.calendar.isMonth}" @click=${V.calendar.showMonth} style="position: relative; flex: 1; height: 38px; border: 0; background: transparent; font-size: 14px; font-weight: 600; color: ${V.calendar.monthInk}">Month</button>
+<div class="scroller" style="position: absolute; inset: 0; overflow-y: auto; padding: 54px 20px 130px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 13.5px; color: #4A5565">Hi ${V.__user.first},</span>
+<div style="display: flex; align-items: baseline; gap: 8px">
+<h1 style="margin: 0; font-size: 40px; line-height: 1; font-weight: 700; letter-spacing: -0.03em">${V.calendar.monthName}</h1>
+<span style="font-size: 20px; font-weight: 500; color: #B39A6B">2026</span>
+</div>
+</div>
+<div role="tablist" aria-label="Calendar view" class="glass" style="position: relative; display: flex; padding: 3px; border-radius: 999px">
+<span aria-hidden="true" style="position: absolute; top: 3px; left: 3px; width: 62px; height: calc(100% - 6px); border-radius: 999px; background: #101828; transform: translateX(${V.calendar.thumbX}); transition: transform .4s cubic-bezier(.2,.85,.25,1)"></span>
+<button type="button" role="tab" aria-selected="${V.calendar.isWeek}" @click=${V.calendar.showWeek} style="position: relative; width: 62px; height: 32px; border: 0; background: transparent; font-size: 13px; font-weight: 600; color: ${V.calendar.weekInk}; transition: color .3s">Week</button>
+<button type="button" role="tab" aria-selected="${V.calendar.isMonth}" @click=${V.calendar.showMonth} style="position: relative; width: 62px; height: 32px; border: 0; background: transparent; font-size: 13px; font-weight: 600; color: ${V.calendar.monthInk}; transition: color .3s">Month</button>
+</div>
+</div>
+
+<div class="glass cal-in" style="border-radius: 18px; padding: 10px 12px 10px 10px; display: flex; align-items: center; gap: 10px">
+<span class="emo" aria-hidden="true" style="flex: none; width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; font-size: 18px; background: linear-gradient(140deg, #FFFFFF, #EFE6D3)">🤧</span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 5px; min-width: 0">
+<span style="display: flex; justify-content: space-between; font-size: 13.5px"><span style="font-weight: 700">Common Cold</span><span style="color: #4A5565">Day 4 of ~7</span></span>
+<span style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px" aria-label="Day 4 of about 7" role="img">
+${((V.calendar.progress) || []).map((L_pg) => html`<span style="height: 5px; border-radius: 3px; ${L_pg.style}"></span>`)}
+</span>
+</span>
 </div>
 
 ${(V.calendar.isMonth) ? html`
-<div class="cal-in" style="border-radius: 28px; padding: 18px 14px 14px; background: rgba(255,255,255,.66); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 14px 36px rgba(61,107,149,.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; flex-direction: column; gap: 14px">
-<div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 0 4px">
-<span style="font-size: 24px; font-weight: 700; letter-spacing: -0.02em">May <span style="color: #B39A6B">2026</span></span>
+<div class="cal-in" style="border-radius: 28px; padding: 16px 12px 12px; background: rgba(255,255,255,.7); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 14px 36px rgba(61,107,149,.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 0 6px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #7A6440">Entries per day</span>
 <span style="font-size: 12.5px; color: #4A5565">13 days logged</span>
 </div>
-<div aria-hidden="true" style="display: flex; gap: 2px; height: 28px; padding: 0 4px; align-items: flex-end">
-${((V.calendar.stripe) || []).map((L_sb) => html`
-<span style="flex: 1; border-radius: 3px; transition: height .4s; ${L_sb.style}"></span>
-`)}
+<div aria-hidden="true" style="display: flex; gap: 2px; height: 26px; padding: 0 6px; align-items: flex-end">
+${((V.calendar.stripe) || []).map((L_sb) => html`<span style="flex: 1; border-radius: 3px; transition: height .4s; ${L_sb.style}"></span>`)}
 </div>
-<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: #8A93A3">
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; font-size: 11px; font-weight: 600; letter-spacing: .04em; color: #8A93A3; padding-top: 4px">
 <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span><span>SAT</span><span>SUN</span>
 </div>
-<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 2px">
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); row-gap: 6px">
 ${((V.calendar.cells) || []).map((L_c) => html`
-<div style="position: relative; height: 48px">
-<span aria-hidden="true" style="position: absolute; top: 3px; height: 42px; ${L_c.ribbon}"></span>
+<div style="height: 50px; display: grid; place-items: center">
 ${(L_c.real) ? html`
-<button type="button" aria-label="${L_c.label}" aria-pressed="${L_c.on}" @click=${L_c.pick} style="position: absolute; inset: 0; border: 0; background: transparent; padding: 0; display: grid; place-items: center">
-<span style="position: relative; width: 40px; height: 40px; border-radius: 50%; box-sizing: border-box; display: grid; place-items: center; font-size: 15px; font-weight: ${L_c.weight}; color: ${L_c.ink}; transition: background .25s, color .25s, box-shadow .25s; ${L_c.circle}">${L_c.n}<span aria-hidden="true" style="position: absolute; bottom: 6px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; ${L_c.dot}"></span></span>
+<button type="button" class="${L_c.cls}" aria-label="${L_c.label}" aria-pressed="${L_c.on}" @click=${L_c.pick} style="width: 42px; height: 48px; border: 0; border-radius: 14px; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; transition: background .25s, box-shadow .25s, transform .25s cubic-bezier(.2,.85,.25,1); animation-delay: ${L_c.delay}s; ${L_c.style}">
+<span style="font-size: 15px; font-weight: ${L_c.weight}; color: ${L_c.ink}">${L_c.n}</span>
+<span style="width: 5px; height: 5px; border-radius: 50%; ${L_c.dot}"></span>
 </button>
 ` : nothing}
 </div>
 `)}
+</div>
+<div style="display: flex; gap: 14px; padding: 4px 6px 0; font-size: 11.5px; color: #4A5565">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 12px; height: 12px; border-radius: 4px; background: linear-gradient(135deg, #EFE6D3, #DCEAF6)"></span>Illness days</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span style="width: 5px; height: 5px; border-radius: 50%; background: #3D6B95"></span>Something logged</span>
 </div>
 </div>
 ` : nothing}
 
 ${(V.calendar.isWeek) ? html`
-<div class="cal-in" style="border-radius: 28px; padding: 16px 10px 14px; background: rgba(255,255,255,.66); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 14px 36px rgba(61,107,149,.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; flex-direction: column; gap: 10px">
-<span style="font-size: 20px; font-weight: 700; letter-spacing: -0.02em; padding: 0 8px">${V.calendar.weekTitle} <span style="color: #B39A6B">May</span></span>
-<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 2px">
+<div class="cal-in" style="border-radius: 28px; padding: 16px 12px 14px; background: rgba(255,255,255,.7); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 14px 36px rgba(61,107,149,.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 0 6px">
+<span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #7A6440">${V.calendar.weekTitle}</span>
+<span style="display: flex; gap: 4px">
+<button type="button" aria-label="Previous week" @click=${V.calendar.prevWeek} style="width: 30px; height: 30px; border: 0; border-radius: 50%; background: rgba(16,24,40,.05); color: #364153; display: grid; place-items: center"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.5 2.5L4 6l3.5 3.5"></path></svg></button>
+<button type="button" aria-label="Next week" @click=${V.calendar.nextWeek} style="width: 30px; height: 30px; border: 0; border-radius: 50%; background: rgba(16,24,40,.05); color: #364153; display: grid; place-items: center"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 2.5L8 6l-3.5 3.5"></path></svg></button>
+</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px">
 ${((V.calendar.week) || []).map((L_w) => html`
-<button type="button" aria-label="${L_w.label}" aria-pressed="${L_w.on}" @click=${L_w.pick} style="border: 0; background: transparent; padding: 4px 0; display: flex; flex-direction: column; align-items: center; gap: 6px">
-<span style="font-size: 11.5px; color: #6A7282">${L_w.d}</span>
-<span style="width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-size: 16px; font-weight: 600; transition: background .25s, color .25s; ${L_w.numStyle}">${L_w.n}</span>
-<span aria-hidden="true" style="width: 5px; height: 5px; border-radius: 50%; ${L_w.dot}"></span>
+<button type="button" class="${L_w.cls}" aria-label="${L_w.label}" aria-pressed="${L_w.on}" @click=${L_w.pick} style="height: 74px; border: 0; border-radius: 16px; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; transition: background .25s, box-shadow .25s, transform .25s cubic-bezier(.2,.85,.25,1); ${L_w.style}">
+<span style="font-size: 11px; font-weight: 600; color: ${L_w.dowInk}">${L_w.d}</span>
+<span style="font-size: 18px; font-weight: 700; color: ${L_w.ink}">${L_w.n}</span>
+<span style="width: 5px; height: 5px; border-radius: 50%; ${L_w.dot}"></span>
 </button>
 `)}
 </div>
 </div>
 ` : nothing}
 
-<div class="cal-in" style="display: flex; flex-direction: column; gap: 12px">
-<div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 4px 0">
-<span style="font-size: 20px; font-weight: 700">${V.calendar.dayTitle}</span>
+<div class="cal-in" style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; padding: 8px 4px 0">
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #6A7282">${V.calendar.dayKicker}</span><span style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em">${V.calendar.dayTitle}</span></span>
 ${(V.calendar.dayIll) ? html`<span style="font-size: 12px; font-weight: 600; padding: 5px 10px; border-radius: 999px; background: #F1EADB; color: #5E4C30">${V.calendar.dayIllLabel}</span>` : nothing}
 </div>
 
-<div style="border-radius: 26px; padding: 14px 14px 8px; background: rgba(255,255,255,.8); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 8px 24px rgba(61,107,149,.08); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px)">
 ${(V.calendar.hasItems) ? html`
-<div style="position: relative">
-<span aria-hidden="true" style="position: absolute; left: 66px; top: 22px; bottom: 22px; width: 2px; border-radius: 1px; background: linear-gradient(180deg, #DCE8F3, #EDE4D0)"></span>
-${((V.calendar.items) || []).map((L_it) => html`
-<div style="position: relative; display: grid; grid-template-columns: 44px 44px 1fr 28px; align-items: center; gap: 0 10px; padding: 6px 0">
-<span style="font-size: 11.5px; font-weight: 500; color: #8A93A3; text-align: right">${L_it.time}</span>
-<span class="emo" aria-hidden="true" style="width: 44px; display: grid; place-items: center; border-radius: 22px; font-size: 21px; ${L_it.node}">${L_it.emoji}</span>
-<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 12px; color: #6A7282">${L_it.meta}</span><span style="font-size: 16px; font-weight: 600">${L_it.title}</span></span>
-<span style="width: 22px; height: 22px; border-radius: 50%; box-sizing: border-box; display: grid; place-items: center; ${L_it.check}">${(L_it.done) ? html`<svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.7"></path></svg>` : nothing}</span>
+${((V.calendar.groups) || []).map((L_g) => html`
+<div style="display: flex; flex-direction: column; gap: 8px">
+<span style="display: flex; align-items: center; gap: 8px; padding: 0 4px; font-size: 12px; font-weight: 600; color: #8A93A3"><span class="emo" aria-hidden="true" style="font-size: 13px">${L_g.icon}</span>${L_g.name}<span style="flex: 1; height: 1px; background: rgba(16,24,40,.07)"></span></span>
+${((L_g.items) || []).map((L_it) => html`
+<div class="glass" style="border-radius: 20px; padding: 12px 14px 12px 12px; display: flex; align-items: center; gap: 12px">
+<span class="emo" aria-hidden="true" style="flex: none; width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 22px; ${L_it.node}">${L_it.emoji}</span>
+<span style="flex: 1; display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-size: 16px; font-weight: 600">${L_it.title}</span><span style="font-size: 12.5px; color: #4A5565">${L_it.meta}</span></span>
+<span style="flex: none; font-size: 12px; font-weight: 600; color: #6A7282">${L_it.time}</span>
+${(L_it.hasCheck) ? html`<span style="flex: none; width: 22px; height: 22px; border-radius: 50%; box-sizing: border-box; display: grid; place-items: center; ${L_it.check}">${(L_it.done) ? html`<svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.3 2.3 4.7-4.7"></path></svg>` : nothing}</span>` : nothing}
 </div>
 `)}
 </div>
+`)}
 ` : nothing}
 ${(V.calendar.noItems) ? html`
-<div style="padding: 22px 4px 26px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<div class="glass" style="border-radius: 22px; padding: 22px 16px 24px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
 <span class="emo" aria-hidden="true" style="font-size: 28px">🌤️</span>
 <span style="font-size: 15px; font-weight: 600">A quiet day</span>
-<span style="font-size: 13px; color: #6A7282">Nothing logged. Tap + if something comes up.</span>
+<span style="font-size: 13px; color: #4A5565">Nothing logged. Tap + if something comes up.</span>
 </div>
 ` : nothing}
-</div>
 </div>
 </div>
 
 <div style="position: absolute; left: 16px; right: 16px; bottom: 20px; display: flex; gap: 10px; align-items: center">
-<nav aria-label="Main" style="flex: 1; display: flex; justify-content: space-between; padding: 6px; border-radius: 999px; background: rgba(255,255,255,.72); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 12px 30px rgba(16,24,40,.10); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px)">
+<nav aria-label="Main" class="glass" style="flex: 1; display: flex; justify-content: space-between; padding: 6px; border-radius: 999px; background: rgba(255,255,255,.72)">
 <a href="#" @click=${V.__nav.home} style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; text-decoration: none; color: #4A5565; font-size: 10.5px; font-weight: 600"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 9l7-6 7 6v8H3z"></path></svg>Home</a>
 <a href="#" @click=${V.__nav.insights} style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; text-decoration: none; color: #4A5565; font-size: 10.5px; font-weight: 600"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 14l5-5 3 3 7-7M13 5h4v4"></path></svg>Insights</a>
 <a href="#" @click=${V.__nav.calendar} aria-current="page" style="flex: 1; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 0; border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 12px rgba(16,24,40,.08); text-decoration: none; color: #7A6440; font-size: 10.5px; font-weight: 700"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="4" width="14" height="13" rx="3"></rect><path d="M3 8h14M7 2.5v3M13 2.5v3"></path></svg>Calendar</a>
@@ -2840,6 +2891,88 @@ ${(V.articles.r.hasNext) ? html`
 ` : nothing}
 
 </div></div>`;
+T.about = (V) => html`<div class="scr-about scr-enter" style="position: absolute; inset: 0"><div class="ab" style="width: 394px; height: 852px; position: relative; overflow: hidden; border-radius: 40px; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', Inter, system-ui, sans-serif; color: #101828; -webkit-font-smoothing: antialiased; background: linear-gradient(170deg, #EAF2F8 0%, #F5F8FB 45%, #F2F5F9 100%)">
+
+<div aria-hidden="true" style="position: absolute; inset: 0; overflow: hidden; pointer-events: none">
+<span class="a1" style="position: absolute; left: -100px; top: -110px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, #CFE3F3 0%, rgba(207,227,243,.5) 40%, rgba(207,227,243,0) 70%)"></span>
+<span class="a1" style="position: absolute; right: -120px; top: 520px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, #EFE6D3 0%, rgba(239,230,211,.5) 42%, rgba(239,230,211,0) 70%); animation-delay: -4s"></span>
+</div>
+
+<div class="scroller" style="position: absolute; inset: 0; overflow-y: auto; padding: 56px 20px 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px">
+
+<div style="position: relative; height: 44px">
+<a href="#" @click=${V.__nav.home} aria-label="Back to Home" style="position: absolute; left: 0; top: 0; width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; text-decoration: none; color: #101828; background: rgba(255,255,255,.75); box-shadow: inset 0 0 0 1px rgba(255,255,255,.95), 0 6px 16px rgba(16,24,40,.08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px)"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 9H3.5M8 4.5L3.5 9 8 13.5"></path></svg></a>
+</div>
+<h1 class="rise" style="margin: -6px 0 2px; text-align: center; font-size: 32px; font-weight: 700; letter-spacing: -0.02em; color: #4A5565">Common Cold</h1>
+
+<div class="card rise">
+<h2 class="ttl">What is it?</h2>
+<p class="p">The common cold is a viral infection of your upper respiratory tract — your nose and throat. It's usually harmless and symptoms typically resolve within 7–10 days. Many different viruses cause it, with rhinoviruses the most common.</p>
+<div class="inner">
+<span style="font-size: 13px; font-weight: 700; color: #101828">The Science</span>
+<span style="font-size: 14px; line-height: 1.55; color: #364153">When a cold virus enters your body, your immune system launches an attack. Your nose and throat become inflamed and produce extra mucus to flush out the virus. This immune response, not the virus itself, causes most of your symptoms like congestion and a runny nose.</span>
+</div>
+</div>
+
+<div class="card rise" style="animation-delay: .06s">
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="emo" aria-hidden="true" style="flex: none; width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 20px; background: linear-gradient(140deg, #CFE3F3, #EFE6D3); box-shadow: 0 6px 14px rgba(61,107,149,.15)">✨</span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span class="ttl">AI Analysis</span><span style="font-size: 13.5px; color: #4A5565">How your logs compare to a common cold</span></span>
+</div>
+<div class="inner" style="background: rgba(255,255,255,.85)">
+<span style="display: flex; justify-content: space-between; font-size: 14px; font-weight: 700"><span>Pattern match</span><span style="color: #3D6B95">85%</span></span>
+<span style="height: 8px; border-radius: 999px; background: #EEF1F4; overflow: hidden"><span style="display: block; width: 85%; height: 100%; border-radius: 999px; background: #8DB4D6; animation: fill 1.1s cubic-bezier(.3,.7,.2,1) .3s both"></span></span>
+<span style="font-size: 14px; line-height: 1.5; color: #364153">Your timeline of fatigue, headache, cough and congestion over 4 days looks like a typical cold.</span>
+</div>
+<div class="inner" style="background: rgba(255,255,255,.85)">
+<span style="font-size: 14px; font-weight: 700">What I looked at</span>
+<span class="li" style="font-size: 14px">21 symptoms logged over 4 days</span>
+<span class="li" style="font-size: 14px">Gradual start, worst on Day 4</span>
+<span class="li" style="font-size: 14px">One fever log, not lasting more than a day</span>
+<span class="li" style="font-size: 14px">Medications and visits you logged</span>
+</div>
+<span style="display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; line-height: 1.45; color: #4A5565"><span class="emo" aria-hidden="true" style="font-size: 13px; padding-top: 1px">ℹ️</span>This compares your logs to typical patterns. It isn't a diagnosis. Only a clinician can confirm what you have.</span>
+</div>
+
+<div class="card rise" style="animation-delay: .1s; padding-right: 0">
+<h2 class="ttl">Your Symptoms</h2>
+<div style="display: flex; gap: 8px; overflow-x: auto; padding: 2px 18px 4px 0; margin-left: -2px">
+${((V.about.chips) || []).map((L_ch) => html`
+<span style="flex: none; display: flex; align-items: center; gap: 8px; height: 40px; padding: 0 14px 0 10px; border-radius: 999px; background: #FFFFFF; box-shadow: 0 4px 12px rgba(16,24,40,.07); font-size: 14px; color: #101828; white-space: nowrap"><span class="emo" aria-hidden="true" style="font-size: 18px">${L_ch.e}</span>${L_ch.t}<span style="font-size: 12px; color: #6A7282">×${L_ch.n}</span></span>
+`)}
+</div>
+</div>
+
+<div class="card rise" style="animation-delay: .14s">
+<h2 class="ttl">Expected Symptoms</h2>
+${((V.about.expected) || []).map((L_ex) => html`<span class="li">${L_ex.t}${(L_ex.logged) ? html`<span style="margin-left: auto; font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: #EAF2F8; color: #2F5B85">Logged</span>` : nothing}</span>`)}
+</div>
+
+<div class="card rise" style="animation-delay: .18s">
+<h2 class="ttl">Treatment</h2>
+<span class="li">Get plenty of rest to help your body fight the infection</span>
+<span class="li">Drink lots of fluids (water, warm tea, soup) to stay hydrated</span>
+<span class="li">Use over-the-counter pain relievers like acetaminophen or ibuprofen for aches and fever</span>
+<span class="li">Gargle with salt water to soothe a sore throat</span>
+<span class="li">Use a humidifier to ease congestion</span>
+</div>
+
+<div class="card rise" style="animation-delay: .22s; background: linear-gradient(160deg, rgba(232,240,247,.92), rgba(220,232,243,.9))">
+<div style="display: flex; align-items: center; gap: 12px">
+<span class="emo" aria-hidden="true" style="flex: none; width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; font-size: 20px; background: linear-gradient(140deg, #8DB4D6, #5C8BB5); box-shadow: 0 6px 14px rgba(61,107,149,.25)">⚠️</span>
+<span class="ttl">Seek medical help if you have:</span>
+</div>
+<span class="li">Fever over 101.3°F (38.5°C) that lasts more than 3 days</span>
+<span class="li">Symptoms that last more than 10 days without improvement</span>
+<span class="li">Severe sore throat, headache, or sinus pain</span>
+<span class="li">Difficulty breathing or shortness of breath</span>
+<span class="li">Persistent vomiting</span>
+<a href="#" @click=${V.__nav.care} style="margin-top: 4px; height: 46px; border-radius: 999px; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; font-size: 15px; font-weight: 600; color: #FFFFFF; background: linear-gradient(120deg, #3D6B95, #5C8BB5); box-shadow: 0 10px 22px rgba(61,107,149,.25)"><span class="emo" aria-hidden="true">📍</span>Find care nearby</a>
+<span style="font-size: 12px; line-height: 1.5; color: #4A5565">Call 911 or go to your nearest emergency room in an emergency. These lists aren't complete. Talk to your doctor about any symptom that feels severe or concerning.</span>
+</div>
+
+</div>
+</div></div>`;
 
 const host = {
   state: { screen: "onboard" },
@@ -2849,7 +2982,7 @@ const host = {
   draw() {
     const V = hostVals(this, this.state.screen);
     const scr = this.state.screen;
-    render(html`${scr === "onboard" ? T.onboard(V) : nothing}${scr === "home" ? T.home(V) : nothing}${scr === "calendar" ? T.calendar(V) : nothing}${scr === "insights" ? T.insights(V) : nothing}${scr === "care" ? T.care(V) : nothing}${scr === "articles" ? T.articles(V) : nothing}${T.log(V)}`, document.getElementById("app"));
+    render(html`${scr === "onboard" ? T.onboard(V) : nothing}${scr === "home" ? T.home(V) : nothing}${scr === "calendar" ? T.calendar(V) : nothing}${scr === "insights" ? T.insights(V) : nothing}${scr === "care" ? T.care(V) : nothing}${scr === "articles" ? T.articles(V) : nothing}${scr === "about" ? T.about(V) : nothing}${T.log(V)}`, document.getElementById("app"));
   }
 };
 hostInit(host);
