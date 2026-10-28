@@ -7,9 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
 <style>
-html,body{margin:0;height:100%;background:#EEF2F6;overflow:hidden}
+html,body{margin:0;height:100%;background:transparent;overflow:hidden}
 body{display:flex;align-items:center;justify-content:center}
-#stage{width:394px;height:852px;flex:none;transform-origin:center center;border-radius:40px;box-shadow:0 30px 80px rgba(16,24,40,.18)}
+#stage{width:394px;height:852px;flex:none;transform-origin:center center}
 #app{width:394px;height:852px;position:relative;overflow:hidden;border-radius:40px;background:#F7F9FB}
 
 html::-webkit-scrollbar,body::-webkit-scrollbar{display:none}
@@ -2457,7 +2457,7 @@ hostInit(host);
 host.draw();
 
 function fit() {
-  const pad = 24, s = Math.min(1, (innerHeight - pad) / 852, (innerWidth - pad) / 394);
+  const pad = 0, s = Math.min(1, (innerHeight - pad) / 852, (innerWidth - pad) / 394);
   document.getElementById("stage").style.transform = "scale(" + s + ")";
 }
 addEventListener("resize", fit); fit();
